@@ -49,12 +49,12 @@ const Blog = () => {
     setCurrentPage((prev) => Math.min(prev + 1, totalPages));
 
   useEffect(() => {
-  AOS.init({
-    duration: 800, // animation duration in ms
-    easing: "ease-in-out", // easing type
-    once: true, // whether animation should happen only once
-  });
-}, []);
+    AOS.init({
+      duration: 800, // animation duration in ms
+      easing: "ease-in-out", // easing type
+      once: true, // whether animation should happen only once
+    });
+  }, []);
 
   return (
     <div>
@@ -62,13 +62,13 @@ const Blog = () => {
         Most Recent Blogs
       </h2>
 
-      <div className="flex justify-center mb-8">
+      <div className="flex justify-center px-4 sm:px-6 md:px-8 mb-8">
         <input
           type="text"
           placeholder="Search blogs..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full max-w-md px-4 py-2 border rounded"
+          className="w-full max-w-lg px-4 py-2 text-sm sm:text-base border border-gray-700 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent transition"
         />
       </div>
 
@@ -77,9 +77,9 @@ const Blog = () => {
           <div
             key={data.slug}
             className="transform transition duration-500 hover:scale-105 h-full w-full"
-            data-aos= "fade-up"
+            data-aos="fade-up"
           >
-            <div className="max-w-sm h-full flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div className="max-w-sm mx-auto h-full flex flex-col bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
               <Image
                 className="rounded-t-lg"
                 src={urlFor(data.imageUrl).url()}

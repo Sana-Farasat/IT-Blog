@@ -41,7 +41,11 @@ interface BlogData {
 //     params: { slug: string };
 //   }
 
-export default async function BlogData({params}: { params: Promise<{slug:string }>}) {
+export default async function BlogData({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const query = `  *[_type == 'blog' && slug.current == '${slug}']{         
         content,
@@ -96,14 +100,15 @@ export default async function BlogData({params}: { params: Promise<{slug:string 
                 </div>
               </div>
             </section>
- {/* <section className="grid grid-cols-1 justify-items-center sm:flex sm:justify-center sm:items-center sm:gap-3 sm:my-2">
+            {/* <section className="grid grid-cols-1 justify-items-center sm:flex sm:justify-center sm:items-center sm:gap-3 sm:my-2">
     <ShareButton  title={data.title} slug={data.slug}   />
     <CopyButton text={portableTextToPlainText(data.content)} />
     <SaveButton blog={data}  />
     <DownloadButton title={data.title} content={portableTextToPlainText(data.content)} />
      </section> */}
 
-            <section className="grid grid-cols-1 sm:grid-cols-4 gap-3 justify-items-center sm:flex sm:justify-center sm:items-center sm:gap-3 sm:my-2">
+            {/* <section className="w-full max-w-48 sm:max-w-96 mx-auto sm:mx-0 grid grid-cols-2 sm:grid-cols-4 gap-1  "> */}
+            <section className="w-full max-w-xs sm:max-w-2xl lg:max-w-4xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-3 justify-items-center my-4">
               <BlogActions
                 title={data.title}
                 slug={data.slug}

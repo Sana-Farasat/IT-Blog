@@ -30,11 +30,11 @@ type FormType = z.infer<typeof formSchema>;
 const ContactForm = () => {
   const form = useForm<FormType>({
     resolver: zodResolver(formSchema), // combining zod and react hook form through this line
-        defaultValues: {
-        Name: "",
-        Email: "",
-        Message: "",
-      },
+    defaultValues: {
+      Name: "",
+      Email: "",
+      Message: "",
+    },
   });
 
   async function onSubmit(values: FormType) {
@@ -51,15 +51,15 @@ const ContactForm = () => {
       });
 
       form.reset(); // ✅ Optionally reset the form
-     } catch (error) {
+    } catch (error) {
       console.error("Error submitting contact form:", error);
       toast.error("Submission failed", {
         description: "Something went wrong. Please try again.",
-     });
+      });
     }
 
     console.log(values);
-   }
+  }
 
   return (
     <div className="max-w-screen-2xl mx-auto flex flex-col justify-center items-center min-h-screen bg-blue-50 rounded-xl">
@@ -82,11 +82,11 @@ const ContactForm = () => {
               name="Name" // "Name" jo zod k formSchema m lkha hai
               render={({ field }) => (
                 <FormItem className="text-center">
-                  <FormLabel className="text-xl text-blue-800 font-bold ">
+                  <FormLabel className="text-xl   text-blue-800 font-bold ">
                     Name
                   </FormLabel>
                   <div className="flex justify-center">
-                    <FormControl className=" w-96 border-blue-800 placeholder:text-blue-800 ">
+                    <FormControl className=" w-full max-w-lg border-blue-800 placeholder:text-blue-800 ">
                       <Input placeholder="Enter your name" {...field} />
                     </FormControl>
                   </div>
@@ -109,7 +109,7 @@ const ContactForm = () => {
                     Email
                   </FormLabel>
                   <div className="flex justify-center">
-                    <FormControl className=" w-96 border-blue-800 placeholder:text-blue-800">
+                    <FormControl className="w-full max-w-lg border-blue-800 placeholder:text-blue-800">
                       <Input placeholder="Enter your email" {...field} />
                     </FormControl>
                   </div>
@@ -132,7 +132,7 @@ const ContactForm = () => {
                     Message
                   </FormLabel>
                   <div className="flex justify-center">
-                    <FormControl className=" w-96 h-32 border-blue-800 placeholder:text-blue-800">
+                    <FormControl className=" w-full max-w-lg h-32 border-blue-800 placeholder:text-blue-800">
                       <Textarea
                         placeholder="Type your message here...."
                         //   className="resize-none"

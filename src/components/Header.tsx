@@ -39,11 +39,14 @@ export default function Header() {
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon">
-                <Menu className="h-5 w-5" />
+              <Button variant="outline" size={"icon"}>
+                <Menu className="h-7 w-7 bg-white" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="bg-amber-200">
+            <SheetContent
+              side="left"
+              className="bg-gradient-to-bl from-white via-blue-100 to-blue-300"
+            >
               <div className="mt-6 flex flex-col gap-4">
                 <h2 className="text-xl font-extrabold text-center p-5">
                   IT BLOG

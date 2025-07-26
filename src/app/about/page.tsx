@@ -1,4 +1,13 @@
+"use client";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default function AboutPage() {
+  useEffect(() => {
+    AOS.init({ duration: 800, once: true });
+  }, []);
+
   return (
     <main className="max-w-screen-2xl mx-auto ">
       {/* <div
@@ -6,14 +15,23 @@ export default function AboutPage() {
         
       > */}
       <div className="max-w-3xl mx-auto px-4 py-12">
-        <h1 className="text-3xl font-bold mb-6">About Us</h1>
+        <h1 className="text-3xl font-bold mb-6" data-aos="fade-down">
+          About Us
+        </h1>
 
-        <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
+        <p
+          className="text-lg text-gray-700 dark:text-gray-300 mb-4"
+          data-aos="fade-up"
+        >
           Welcome to <strong>MyITBlog</strong> – your one-stop destination for
           insightful and up-to-date content on Information Technology.
         </p>
 
-        <p className="mb-4 text-lg text-gray-700 dark:text-gray-300">
+        <p
+          className="mb-4 text-lg text-gray-700 dark:text-gray-300"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           In today&apos;s fast-paced digital world, technology evolves every
           day. Our mission is to simplify complex IT topics and make them
           accessible to everyone — whether you&apos;re a student, developer,
@@ -22,7 +40,11 @@ export default function AboutPage() {
           we cover it all.
         </p>
 
-        <p className="mb-4 text-lg  text-gray-700 dark:text-gray-300">
+        <p
+          className="mb-4 text-lg  text-gray-700 dark:text-gray-300"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           At MyITBlog, we believe in quality content that educates, empowers,
           and inspires. Our team is passionate about demystifying technology and
           helping our readers stay ahead in their careers and projects. We also
@@ -30,14 +52,22 @@ export default function AboutPage() {
           development tips.
         </p>
 
-        <p className="mb-4 text-lg text-gray-700 dark:text-gray-300">
+        <p
+          className="mb-4 text-lg text-gray-700 dark:text-gray-300"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
           Whether you&apos;re just starting out or you&apos;re a seasoned IT
           professional, you&apos;ll find something valuable here. We&apos;re
           constantly evolving and open to feedback — so feel free to reach out
           or suggest topics you&apos;d love to read about.
         </p>
 
-        <p className="mt-6 font-medium text-gray-800 dark:text-gray-200">
+        <p
+          className="mt-6 font-medium text-gray-800 dark:text-gray-200"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
           🚀 Let&apos;s explore technology together — one post at a time.
         </p>
       </div>
